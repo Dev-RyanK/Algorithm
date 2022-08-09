@@ -1,7 +1,6 @@
 let fs = require('fs');
 let input = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(Number);
 
-input = [0, 0, 0, 0, 2, 8];
 // 배열 지정
 const chess = [1, 1, 2, 2, 2, 8];
 // map: 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환하는 메서드
