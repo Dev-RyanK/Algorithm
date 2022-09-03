@@ -13,6 +13,7 @@ for (i = 1; i <= input; i++) {
   blank = '' // 다시 처음부터 input-i해서, 둘째줄이 3개가 되게 함. 기존 blank 값에 input-i 개를 더하는 걸 방지
 }
 
+
 // join 메서드 활용
 
 let num = Number(input)
@@ -25,6 +26,7 @@ for (let k = num - 1; k >= 0; k--) { // k[5-1=4]
   star[k] = '*'
   console.log(star.join(''));
 }
+
 
 // repeat 메서드 활용
 for (l = 1; l <= input; l++) {
