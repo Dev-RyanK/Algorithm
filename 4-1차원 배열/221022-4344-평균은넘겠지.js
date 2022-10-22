@@ -19,4 +19,3 @@ for (let i = 1; i <= input[0]; i++) {
 }
 
 // console.log((0.5556).toFixed([3]))
-// const average = arr => arr.reduce((p, c) => p + c, 0) / arr.length;
