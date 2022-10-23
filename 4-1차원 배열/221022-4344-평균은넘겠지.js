@@ -18,4 +18,4 @@ for (let i = 1; i <= input[0]; i++) {
   }
 }
 
-console.log((0.5556).toFixed([3]))
+// console.log((0.5556).toFixed([3]))
