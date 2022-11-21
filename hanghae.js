@@ -1,4 +1,4 @@
-/* 별찍기 */
+/* 1. 별찍기 */
 const input = [5, 3]
 const star = input[0]
 const row = input[1]
@@ -26,7 +26,7 @@ for (let i = 0; i < row; i++) {
   console.log(output2);
 }
 
-/* 짝수와 홀수 */
+/* 2. 짝수와 홀수 */
 function oddOrEven(num) {
   return num % 2 ? 'Odd' : 'Even'
 }
@@ -35,7 +35,7 @@ console.log(oddOrEven(2))
 console.log(oddOrEven(0))
 
 
-/* 가운데 글자 가져오기 */
+/* 3. 가운데 글자 가져오기 */
 // s = 'abcde'
 function solution(s) {
   var answer = ''
@@ -64,7 +64,7 @@ function solution(s) {
 }
 
 
-/* 두 정수 사이의 합 */
+/* 4. 두 정수 사이의 합 */
 function solution(a, b) {
   let nums
   if (b < a) [a, b] = [b, a]
@@ -74,12 +74,12 @@ function solution(a, b) {
   return nums.reduce((p, c) => p + c)
 }
 
-/* 문자열을 정수로 바꾸기 */
+/* 5. 문자열을 정수로 바꾸기 */
 function solution(s) {
   return parseInt(s)
 }
 
-/* 없는 숫자 더하기 */
+/* 6. 없는 숫자 더하기 */
 function solution(numbers) {
   let absent = [0]
   absent.push(...Array.from({ length: 9 }, (v, i) => i + 1))
@@ -89,7 +89,7 @@ function solution(numbers) {
 }
 
 
-/* 음양 더하기 */
+/* 7. 음양 더하기 */
 // absolutes = [3,4,5] / signs = [false, true, true] / => 6
 function solution(absolutes, signs) {
   let num = 0
@@ -97,17 +97,17 @@ function solution(absolutes, signs) {
   return num
 }
 
-/* 평균 구하기 */
+/* 8. 평균 구하기 */
 function solution(arr) {
   return arr.reduce((p, c) => p + c) / arr.length
 }
 
-/* 핸드폰 번호 가리기 */
+/* 9. 핸드폰 번호 가리기 */
 function solution(phone_number) {
   return '*'.repeat(phone_number.length - 4) + phone_number.substring(phone_number.length - 4)
 }
 
-/* 행렬의 덧셈 */
+/* 10. 행렬의 덧셈 */
 // Number로 지정해주지 않으면 틀린 답이라고 나왔음
 function solution(arr1, arr2) {
   let tempArr = []
@@ -119,7 +119,7 @@ function solution(arr1, arr2) {
 }
 
 
-/* x만큼 간격이 있는 n개의 숫자 */
+/* 11. x만큼 간격이 있는 n개의 숫자 */
 // x=2, n=5 [2,3,6,8,10]
 function solution(x, n) {
   let answer = []
@@ -139,6 +139,11 @@ function solution(price, money, count) {
 
 
 /* 13. 2016년 */
+function solution(a, b) {
+  let days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+  let date = new Date(`2016-${a}-${b}`)
+  return days[date.getDay()]
+}
 
 
 /* 14. 나누어 떨어지는 숫자 배열 */
@@ -176,6 +181,24 @@ return s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length;
 
 
 /* 17. 문자열 다루기 기본 */
+// 남의 풀이
+function solution(s) {
+  if (s.length === 4 || s.length === 6) {
+    return s.split('').every(num => !isNaN(num)) // 모든 요소가 number면 true 리턴
+    // 예: '0010'.split('') => 0, 0, 1, 0
+  } else {
+    return false
+  }
+}
+
+console.log(solution('0034'));
+console.log(solution('a234'));
+console.log(solution('1234'));
+console.log(solution('123'));
+console.log(solution('1234aa'));
+console.log(solution('aa1234'));
+console.log(solution('12aa34'));
+console.log(solution('123456'));
 
 
 /* 18. 서울에서 김서방 찾기 */
@@ -205,17 +228,107 @@ function solution(n) {
 return '수박'.repeat(n / 2) + (n % 2 === 1 ? '수' : '');
 
 /* 20. 완주하지 못한 선수 */
-
+// 남의 풀이. sort로 순차 정렬을 하고 일치하지 않는 것을 반환한다
+function solution(p, c) {
+  p.sort()
+  c.sort()
+  for (let i = 0; i < p.length; i++) {
+    if (p[i] !== c[i]) {
+      return p[i]
+    }
+  }
+}
 
 
 /* 21. 이상한 문자 만들기 */
-
+// 남의 풀이
+function solution(s) {
+  let words = s.split(' ')
+  let answer = []
+  for (let i = 0; i < words.length; i++) {
+    answer.push(words[i].split('').map((val, idx) => idx % 2 ? val.toLowerCase() : val.toUpperCase()).join(''))
+  }
+  return answer.join(' ')
+}
 
 /* 22. 자릿수 더하기 */
-/* 23. 자연수 뒤집기 */
-/* 24. 내림차순으로 배치하기 */
-/* 25. 정수 제곱근 판별 */
-/* 26. 제일 작은 수 제거하기 */
-/* 27. 콜라츠 추측 */
-/* 28. 하샤드 수 */
+function solution(n) {
+  return String(n).split('').map(x => Number(x)).reduce((p, c) => p + c)
+}
 
+console.log(solution(123));
+console.log(solution(987));
+
+
+/* 23. 자연수 뒤집기 */
+// 테스트는 통과했으나 채점 실패
+/* function solution(n) {
+  return n.toString().split('').sort((a, b) => b - a).map(x => Number(x))
+} */
+function solution(n) {
+  return String(n).split('').reverse().map(x => Number(x))
+}
+
+console.log(solution(12345));
+console.log(solution(54321));
+console.log(solution(9234));
+console.log(solution(132123));
+console.log(solution(123000));
+
+/* 24. 내림차순으로 배치하기 */
+function solution(n) {
+  let answer = String(n).split('').map(x => Number(x)).sort().reverse().join('')
+  return Number(answer)
+}
+
+console.log(solution(118372));
+console.log(solution(110072));
+
+/* 25. 정수 제곱근 판별 */
+function solution(n) {
+  let x = Number(Math.sqrt(n))
+  return Number.isInteger(x) ? Math.pow((x + 1), 2) : -1
+}
+
+console.log(solution(121));
+console.log(solution(3));
+
+
+/* 26. 제일 작은 수 제거하기 */
+function solution(arr) {
+  let temp = []
+  temp.push(Math.min(...arr))
+  let answer = arr.filter(item => !temp.includes(item))
+  return answer.length !== 0 ? answer : [-1]
+}
+console.log(solution([4, 3, 2, 1]));
+console.log(solution([1, 2, 3, 4]));
+console.log(solution([3, 1, 2, 4]));
+console.log(solution([10]));
+console.log(solution([-2, 1, 0]));
+console.log(solution([0, 1, 2]));
+
+
+/* 27. 콜라츠 추측 */
+// 남의 풀이
+function solution(num) {
+  let answer = 0;
+  while (num !== 1 && answer !== 500) {
+    num % 2 === 0 ? num = num / 2 : num = num * 3 + 1;
+    answer++;
+  }
+  return num === 1 ? answer : -1;
+}
+
+/* 28. 하샤드 수 */
+function solution(x) {
+  x = String(x).split('').map(item => Number(item))
+  let num = x.reduce((p, c) => p + c)
+  x = Number(x.join(''))
+  return x % num ? false : true
+}
+
+console.log(solution(10));
+console.log(solution(12));
+console.log(solution(11));
+console.log(solution(18));
