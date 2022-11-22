@@ -204,9 +204,8 @@ function solution(s) {
   if (s.length === 4 || s.length === 6) {
     return s.split('').every(num => !isNaN(num)) // 모든 요소가 number면 true 리턴
     // 예: '0010'.split('') => 0, 0, 1, 0
-  } else {
-    return false
-  }
+  } else return false
+
 }
 
 console.log(solution('0034'));
@@ -354,13 +353,45 @@ function solution(n) {
   let answer = n.toString(3).split('').reverse().join('')
   return parseInt(answer, 3)
 }
+// 남의 풀이
+const answer = [];
+while (n !== 0) {
+  answer.unshift(n % 3);
+  n = Math.floor(n / 3);
+}
+return answer.reduce((acc, v, i) => acc + (v * Math.pow(3, i)), 0);
 
 console.log(solution(45));
 console.log(solution(125));
 
 /* 30. 최소 직사각형 */
 /* 31. 같은 숫자는 싫어 */
+// 남의 풀이
+function solution(arr) {
+  let answer = []
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] != arr[i + 1]) answer.push(arr[i])
+  }
+  return answer
+}
+
+console.log(solution([1, 1, 3, 3, 0, 1, 1]))
+console.log(solution([4, 4, 4, 3, 3]));
+
+
 /* 32. 두 개 뽑아서 더하기 */
+
+
 /* 33. 로또의 순위 */
 /* 34. 모의고사 */
+/* 35. 문자열 정렬하기 */
+// reverse 이용해서 실패 뜰 때는 sort를 먼저 해 보자
+function solution(s) {
+  let answer = s.split('').sort().reverse().join('')
+  // 남의 풀이
+  // let answer = s.split('').sort((a, b) => a < b ? 1 : -1).join('')
+  return answer
+}
 
+console.log(solution('Zbcdefg'));
+// "gfedcbZ"
