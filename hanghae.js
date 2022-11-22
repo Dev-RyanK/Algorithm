@@ -38,24 +38,14 @@ console.log(oddOrEven(0))
 /* 3. 가운데 글자 가져오기 */
 // s = 'abcde'
 function solution(s) {
-  var answer = ''
   let num = s.length
   let countStr = Math.ceil(num / 2) - 1
-  if (num % 2 === 0) {
-    answer = s.substring(countStr, countStr + 2)
-  } else {
-    answer = s.substring(countStr, countStr + 1)
-  }
-  return answer
+  return num % 2 ? s.substring(countStr, countStr + 1) : s.substring(countStr, countStr + 2)
 }
 
-function solution(s) {
-  var answer = ''
-  let num = s.length
-  let countStr = Math.ceil(num / 2) - 1
-  num % 2 ? answer = s.substring(countStr, countStr + 1) : answer = s.substring(countStr, countStr + 2)
-  return answer
-}
+console.log(solution('abcde'))
+console.log(solution('abcd'))
+
 
 function solution(s) {
   // 인풋의 길이를 반 나눠서 올림한 결과 -1(인덱스는 0번째부터 시작하므로)
@@ -65,14 +55,18 @@ function solution(s) {
 
 
 /* 4. 두 정수 사이의 합 */
+// 배열을 만들어서 자기를 포함한 숫자만큼 -> empty를 채우고 -> 그 자리를 value 빼고 a값 + 인덱스값 해서 -> 빈 값에 하나씩 꽂아줌
+// 예: [3, 5] 
 function solution(a, b) {
-  let nums
-  if (b < a) [a, b] = [b, a]
-  // 배열을 만들어서 자기를 포함한 숫자만큼 -> empty를 채우고 -> 그 자리를 value 빼고 a값 + 인덱스값 해서 -> 빈 값에 하나씩 꽂아줌
-  // 예: [3, 5] 
-  nums = Array(b - a + 1).fill().map((_, idx) => a + idx)
+  if (a > b) [a, b] = [b, a]
+  let nums = Array(b - a + 1).fill().map((_, idx) => a + idx)
   return nums.reduce((p, c) => p + c)
 }
+
+console.log(solution(3, 5));
+console.log(solution(5, 3));
+console.log(solution(3, 3));
+
 
 /* 5. 문자열을 정수로 바꾸기 */
 function solution(s) {
@@ -80,62 +74,79 @@ function solution(s) {
 }
 
 /* 6. 없는 숫자 더하기 */
-function solution(numbers) {
+function solution(nums) {
   let absent = [0]
   absent.push(...Array.from({ length: 9 }, (v, i) => i + 1))
-  let result = Array.from(absent.filter((item) => !numbers.includes(item)))
-
+  let result = Array.from(absent.filter(item => !nums.includes(item)))
   return result.reduce((p, c) => p + c)
 }
+
+console.log(solution([1, 2, 3, 4, 6, 7, 8, 0]));
+console.log(solution([5, 8, 4, 0, 6, 7, 9]));
 
 
 /* 7. 음양 더하기 */
 // absolutes = [3,4,5] / signs = [false, true, true] / => 6
-function solution(absolutes, signs) {
+function solution(abs, signs) {
   let num = 0
-  for (i in absolutes) signs[i] === true ? num += absolutes[i] : num -= absolutes[i]
+  for (i in abs) signs[i] === true ? num += abs[i] : num -= abs[i]
   return num
 }
+
+console.log(solution([4, 7, 12], [true, false, true]));
+console.log(solution([1, 2, 3], [false, false, true]));
+
 
 /* 8. 평균 구하기 */
 function solution(arr) {
   return arr.reduce((p, c) => p + c) / arr.length
 }
 
+console.log(solution([1, 2, 3, 4]));
+console.log(solution([5, 5]));
+
+
 /* 9. 핸드폰 번호 가리기 */
 function solution(phone_number) {
   return '*'.repeat(phone_number.length - 4) + phone_number.substring(phone_number.length - 4)
 }
+
 
 /* 10. 행렬의 덧셈 */
 // Number로 지정해주지 않으면 틀린 답이라고 나왔음
 function solution(arr1, arr2) {
   let tempArr = []
   for (num in arr1) {
-    let add = arr1[num].map((value, index) => Number(value) + Number(arr2[num][index]))
+    let add = arr1[num].map((value, index) => Number(value + arr2[num][index]))
     tempArr.push(add)
   }
   return tempArr
 }
 
+console.log(solution([[1, 2], [2, 3]], [[3, 4], [5, 6]]));
+console.log(solution([[1], [2]], [[3], [4]]));
 
 /* 11. x만큼 간격이 있는 n개의 숫자 */
-// x=2, n=5 [2,3,6,8,10]
 function solution(x, n) {
   let answer = []
   for (i = 1; i <= n; i++) answer.push(x * i)
   return answer
 }
 
+console.log(solution(2, 5));
+console.log(solution(4, 3));
+console.log(solution(-4, 2));
+
 
 /* 12. 부족한 금액 계산하기 */
-// [3, 20, 4] // 10
 function solution(price, money, count) {
   let arr = []
   for (i = 1; i <= count; i++) arr.push(price * i)
   const totalCost = arr.reduce((p, c) => p + c)
-  return totalCost > money === true ? totalCost - money : 0
+  return totalCost > money ? totalCost - money : 0
 }
+
+console.log(solution(3, 20, 4)); //10
 
 
 /* 13. 2016년 */
@@ -150,17 +161,24 @@ function solution(a, b) {
 function solution(arr, divisor) {
   let answer = []
   for (num of arr) num % divisor === 0 ? answer.push(num) : answer.push()
-  if (answer.length === 0) answer.push(-1)
-  return answer.sort(function (a, b) { return a - b })
+  return answer.length ? answer.sort((a, b) => a - b) : [-1]
 }
+
+console.log(solution([5, 9, 7, 10], 5));
+console.log(solution([2, 36, 1, 3], 1));
+console.log(solution([3, 2, 6], 10));
 
 
 /* 15. 내적 */
+// a[0]*b[0] + a[1]*b[1] ...
 function solution(a, b) {
   let answer = []
   for (i in a) answer.push(a[i] * b[i])
   return answer.reduce((p, c) => p + c)
 }
+console.log(solution([1, 2, 3, 4], [-3, -1, 0, 2])); //3
+console.log(solution([-1, 0, 1], [1, 0, -1])); //-2
+
 // 다른 사람 풀이
 return a.reduce((acc, _, i) => acc += a[i] * b[i], 0);
 
@@ -203,15 +221,13 @@ console.log(solution('123456'));
 
 /* 18. 서울에서 김서방 찾기 */
 function solution(seoul) {
-  for (i = 0; i < seoul.length; i++) {
-    if (seoul[i] === 'kim') return i
-  }
+  for (i = 0; i < seoul.length; i++) if (seoul[i] === 'Kim') return `김서방은 ${i}에 있다`
 }
 
-console.log(solution(['jane', 'kim']))
-console.log(solution(['jane', 'ryan', 'kim']))
-console.log(solution(['jane', 'ryan', 'kim', 'robin']))
-console.log(solution(['kim', 'jane', 'ryan', 'robin']))
+console.log(solution(['Jane', 'Kim']))
+console.log(solution(['Jane', 'Ryan', 'Kim']))
+console.log(solution(['Jane', 'Ryan', 'Kim', 'Robin']))
+console.log(solution(['Kim', 'Jane', 'Ryan', 'Robin']))
 
 // 남의 풀이
 let idx = seoul.indexOf('Kim');
@@ -225,7 +241,7 @@ function solution(n) {
 }
 
 // 남의 풀이
-return '수박'.repeat(n / 2) + (n % 2 === 1 ? '수' : '');
+return '수박'.repeat(n / 2) + (n % 2 ? '수' : '');
 
 /* 20. 완주하지 못한 선수 */
 // 남의 풀이. sort로 순차 정렬을 하고 일치하지 않는 것을 반환한다
@@ -324,11 +340,27 @@ function solution(num) {
 function solution(x) {
   x = String(x).split('').map(item => Number(item))
   let num = x.reduce((p, c) => p + c)
-  x = Number(x.join(''))
-  return x % num ? false : true
+  return Number(x.join('')) % num ? false : true
 }
 
 console.log(solution(10));
 console.log(solution(12));
 console.log(solution(11));
 console.log(solution(18));
+
+
+/* 29. 3진법 뒤집기 */
+function solution(n) {
+  let answer = n.toString(3).split('').reverse().join('')
+  return parseInt(answer, 3)
+}
+
+console.log(solution(45));
+console.log(solution(125));
+
+/* 30. 최소 직사각형 */
+/* 31. 같은 숫자는 싫어 */
+/* 32. 두 개 뽑아서 더하기 */
+/* 33. 로또의 순위 */
+/* 34. 모의고사 */
+
