@@ -365,16 +365,30 @@ console.log(solution(45));
 console.log(solution(125));
 
 /* 30. 최소 직사각형 */
-// 실패 답
-function solution(sizes) {
+// 실패 답. 가로세로를 무시했기 때문일 것
+/* function solution(sizes) {
   let arr = []
   let answer = arr.concat(...sizes).sort((a, b) => b - a)
   for (let i = 0; i < answer.length; i++) return answer[0] * answer[answer.length / 2]
+} */
+
+function solution(sizes) {
+  let max = []
+  let min = []
+  for (let i = 0; i < sizes.length; i++) {
+    if (sizes[i][0] < sizes[i][1]) {
+      sizes[i] = [sizes[i][1], sizes[i][0]]
+    }
+    max.push(sizes[i][0])
+    min.push(sizes[i][1])
+  }
+  return Math.max(...max) * Math.max(...min)
 }
 
 console.log(solution([[60, 50], [30, 70], [60, 30], [80, 40]]));
 console.log(solution([[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]));
 console.log(solution([[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]));
+
 
 
 /* 31. 같은 숫자는 싫어 */
