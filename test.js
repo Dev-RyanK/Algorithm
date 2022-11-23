@@ -1,29 +1,11 @@
-/* function solution(numbers) {
-  let arr = []
-  let hey = numbers.sort()
-  for (i = 0; i < numbers.length; i++) {
-    for (j = 0; j < numbers.length; j++) {
-      arr.push(hey[i] + hey[j])
-    }
-  }
-  return arr.filter((val, idx) => arr.indexOf(val) === idx).sort((a, b) => a - b)
-} */
-
-/* function solution(numbers) {
-  let arr = numbers.sort()
-  return arr.map((val, idx) => val + val)
-  // return arr.map((val, idx) => val[idx] + val[idx + 1])
-  // return arr
-} */
-/*
-let arr = [2, 1, 3, 4, 1]
-let test = []
-let i = 0
-while (arr[i] !== arr[i + 1]) {
-  test.push(arr[i] + arr[i + 1])
-  i++
+function solution(strings, n) {
+  return strings.sort((a, b) => {
+    if (a[n] > b[n]) return 1
+    else if (a[n] < b[n]) return -1
+    else return a > b ? 1 : -1
+  })
 }
-console.log(test); */
 
-// console.log(solution([2, 1, 3, 4, 1]))	// [2,3,4,5,6,7]
-// console.log(solution([5, 0, 2, 7]))	// [2,5,7,9,12]
+
+console.log(solution(["sun", "bed", "car"], 1));
+console.log(solution(["abce", "abcd", "cdx"], 2));

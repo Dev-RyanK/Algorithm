@@ -204,8 +204,9 @@ function solution(s) {
   if (s.length === 4 || s.length === 6) {
     return s.split('').every(num => !isNaN(num)) // 모든 요소가 number면 true 리턴
     // 예: '0010'.split('') => 0, 0, 1, 0
-  } else return false
-
+  } else {
+    return false
+  }
 }
 
 console.log(solution('0034'));
@@ -406,11 +407,41 @@ console.log(solution([4, 4, 4, 3, 3]));
 
 
 /* 32. 두 개 뽑아서 더하기 */
+// 남의 풀이. 중복확인 안 해줘도 번호 하나씩 엇나가서 나오고 Set으로 중복 결과값 잡아줌
+function solution(numbers) {
+  const arr = []
+  for (let i = 0; i < numbers.length; i++) { // 4
+    for (let j = i + 1; j < numbers.length; j++) { // 4
+      arr.push(numbers[i] + numbers[j]) // 
+    }
+  }
+  const answer = [...new Set(arr)]
+  return answer.sort((a, b) => a - b)
+}
+
 
 
 /* 33. 로또의 순위 */
 /* 34. 모의고사 */
 /* 35. 문자열 정렬하기 */
+// 남의 풀이
+function solution(strings, n) {
+  return strings.sort((a, b) => {
+    // 비교 함수(conmpare function): 0보다 크면 a가 먼저, 0일 때 그대로, 0보다 작으면 b가 먼저
+    // n자리를 비교하고
+    if (a[n] > b[n]) return 1
+    else if (a[n] < b[n]) return -1
+    // (0일 경우) 단어 통으로 비교한다
+    else return a > b ? 1 : -1
+  })
+}
+
+
+console.log(solution(["sun", "bed", "car"], 1));
+console.log(solution(["abce", "abcd", "cdx"], 2));
+
+
+/* 36. 내림차순으로 배치하기 */
 // reverse 이용해서 실패 뜰 때는 sort를 먼저 해 보자
 function solution(s) {
   let answer = s.split('').sort().reverse().join('')
