@@ -29,3 +29,28 @@ console.log(solution('15 3 10 9 7 8'));
 console.log(solution('97 75 88 99 95 92 73'))
 
 // 소수의 최대값 정수의 최소값으로 '두 숫자'만 남기는 문제
+
+// -------------------- //
+// 문자열 정렬하기
+function solution(strings, n) {
+  let arr = []
+  let arr2 = []
+  for (let i = 0; i < strings.length; i++) {
+    arr.push(strings[i][n])
+    arr = arr.sort()
+    if (arr[i] === strings[i][n]) {
+      return strings[i]
+    }
+  }
+  // return arr2
+}
+
+console.log(solution(["sun", "bed", "car"], 1));
+console.log(solution(["abce", "abcd", "cdx"], 2));
+
+// ["car", "bed", "sun"]
+// ["abcd", "abce", "cdx"]
+
+/* let arr = ["car", "bed", "sun"]
+
+arr.forEach(function (val, idx) { console.log(val, idx) }) */
