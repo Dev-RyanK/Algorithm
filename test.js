@@ -1,10 +1,3 @@
-/* const ryan = {
-  name: 'ryan',
-  age: 31,
-  gender: 'agender',
-  act: function (code) {
-    console.log(`${this.name}은 ${code} 중!`);
-  }
+for (i = 5; i > 0; i--) {
+  console.log(`${i}번입니다`);
 }
-
-ryan.act('코딩') */

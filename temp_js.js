@@ -73,3 +73,20 @@ console.log(solution("2three45sixseven")); // 45에서 5가 증발
 console.log(solution("123"));
 
 // console.log("23four5six7"[6]);
+
+function star(input) {
+  let aa = ''
+  for (let i = 0; i < input; i++) {
+    for (let j = 0; j < input - i; j++) {
+      aa += '@'
+    }
+    aa += '\n'
+  }
+  console.log(aa);
+}
+
+star(3)
+
+/* for (let j = 0; j <= a; j++) {
+  console.log('*'.repeat(j));
+} */
