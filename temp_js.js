@@ -31,26 +31,45 @@ console.log(solution('97 75 88 99 95 92 73'))
 // 소수의 최대값 정수의 최소값으로 '두 숫자'만 남기는 문제
 
 // -------------------- //
-// 문자열 정렬하기
-function solution(strings, n) {
-  let arr = []
-  let arr2 = []
-  for (let i = 0; i < strings.length; i++) {
-    arr.push(strings[i][n])
-    arr = arr.sort()
-    if (arr[i] === strings[i][n]) {
-      return strings[i]
-    }
-  }
-  // return arr2
+for (let i = 0; i < wordArr.length; i++) {
+  let word = wordArr[i]
+  let nums = numArr[i]
+  // console.log(word, nums);
+
+  // let re = new RegExp(wordArr[i], "g")
+  // let re2 = new RegExp(numArr[i], 'g')
+  // let rr = /g^\S+$/
+  let re = new RegExp(word, 'g')
+  // let output = s.replace(re, numArr[i])
+  let output = s.replaceAll(re, nums)
+  return word
 }
 
-console.log(solution(["sun", "bed", "car"], 1));
-console.log(solution(["abce", "abcd", "cdx"], 2));
 
-// ["car", "bed", "sun"]
-// ["abcd", "abce", "cdx"]
+function solution(s) {
+  const numArr = Array.from({ length: 10 }, (v, i) => i).toString()
+  let wordArr = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+  let x = []
+  for (let i = 0; i < s.length; i++) {
+    for (let j = 0; j < wordArr.length; j++) {
+      if (s[i] + s[i + 1] === wordArr[j][0] + wordArr[j][1]) {
+        // x.push(wordArr.indexOf(wordArr[j]))
+        x.push(wordArr[j])
+      } else if (s[i] === numArr[j]) {
+        x.push(s[i])
+      }
+    }
+  }
+  // return x.join('')
+  return x
+}
 
-/* let arr = ["car", "bed", "sun"]
+// 오브젝트로 키-밸류 맞춰서 하는 법도 있을 거 같아
+// 아예 split으로 다 해체해서 number와 string 배열로 작업하는 법은.
 
-arr.forEach(function (val, idx) { console.log(val, idx) }) */
+console.log(solution("one4seveneight"));
+console.log(solution("23four5six7")); // 중간5, 끝자리 7이 증발하는데 왜?
+console.log(solution("2three45sixseven")); // 45에서 5가 증발
+console.log(solution("123"));
+
+// console.log("23four5six7"[6]);

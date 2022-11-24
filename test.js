@@ -1,11 +1,10 @@
-function solution(strings, n) {
-  return strings.sort((a, b) => {
-    if (a[n] > b[n]) return 1
-    else if (a[n] < b[n]) return -1
-    else return a > b ? 1 : -1
-  })
+/* const ryan = {
+  name: 'ryan',
+  age: 31,
+  gender: 'agender',
+  act: function (code) {
+    console.log(`${this.name}은 ${code} 중!`);
+  }
 }
 
-
-console.log(solution(["sun", "bed", "car"], 1));
-console.log(solution(["abce", "abcd", "cdx"], 2));
+ryan.act('코딩') */
