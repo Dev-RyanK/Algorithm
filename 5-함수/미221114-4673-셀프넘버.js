@@ -37,8 +37,11 @@ while (n < 10000) {
   arr[n + (n + "").split("").reduce((a, c) => a + +c, 0)] = true
   n++
 }
+// 셀프넘버를 담을 빈 배열 선언
 let r = []
 arr.forEach((v, i) => {
+  // 이전값이 아닐 때 현재값을 push
   if (!v) r.push(i)
 })
+//
 console.log(r.slice(1).join("\n"))
