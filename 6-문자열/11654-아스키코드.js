@@ -4,7 +4,7 @@ const input = require("fs")
   .toString()
   .trim()
 
-console.log(input[0].charCodeAt(0))
+console.log(input.charCodeAt(0))
 
 // 남의 풀이
 console.log(input.charCodeAt())
