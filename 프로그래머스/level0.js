@@ -1,3 +1,38 @@
+// 더 크게 합치기
+/* function solution(a, b) {
+  const a_str = a.toString()
+  const b_str = b.toString()
+  const ab = parseInt(a_str + b_str)
+  const ba = parseInt(b_str + a_str)
+  if (ab > ba) {
+    return ab
+  } else if (ab < ba) {
+    return ba
+  } else {
+    return ab
+  }
+} 
+// 남의 풀이
+    return Math.max(Number(`${a}${b}`), Number(`${b}${a}`))
+
+
+*/
+
+// 문자열 곱하기
+/* function solution(my_string, k) {
+  return my_string.repeat(k)
+} */
+
+// 문자 리스트를 문자열로 변환하기
+/* function solution(arr) {
+  let answer = arr.toString().split(",").join("")
+  return answer
+}
+
+// 남의 풀이
+return arr.join("")
+*/
+
 // 문자열 섞기
 /* const str1 = "aaaaa"
 const str2 = "bbbbb"
