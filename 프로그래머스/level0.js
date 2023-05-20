@@ -1,3 +1,6 @@
+// 두 수의 연산값 비교하기
+// return Math.max(Number(`${a}${b}`), 2*a*b
+
 // 더 크게 합치기
 /* function solution(a, b) {
   const a_str = a.toString()
