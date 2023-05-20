@@ -1,6 +1,24 @@
-// 두 수의 연산값 비교하기
-// return Math.max(Number(`${a}${b}`), 2*a*b
+// 공배수
+/* return number % n === 0 && number % m === 0 ? 1 : 0
 
+// 남의 풀이1
+return +!(number % n || number % m); // 이거 뭘까??
+
+// 남의 풀이2
+return (number%n ===0) ? (number%m===0) ? 1 : 0 : 0;
+
+*/
+
+// n의 배수
+// return num % n === 0 ? 1 : 0
+
+// 두 수의 연산값 비교하기
+/* return Math.max(Number(`${a}${b}`), 2*a*b
+// 남의 풀이 (Math.max 안 쓴 거)
+let num1 = parseInt(a+""+b+"");
+    let num2 = 2*a*b;
+    return num1 > num2 ? num1 : num2;
+*/
 // 더 크게 합치기
 /* function solution(a, b) {
   const a_str = a.toString()
