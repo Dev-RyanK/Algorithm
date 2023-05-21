@@ -1,12 +1,31 @@
+// [미] 원소들의 곱과 합
+/* let arr = [3, 4, 5, 2, 1]
+let arr2 = [5, 7, 8, 3]
+
+let multiple = arr2.reduce((p, c) => console.log(p * c), Math.min(...arr2))
+let square = arr2.reduce((p, c) => p + c, Math.min(...arr2)) ** 2
+
+console.log(multiple, square)
+console.log(5 * 7 * 8 * 3) */
+
+// [미]주사위 게임2
+/* if (a !== b && b !== c && c !== a) {
+  return a + b + c
+} else if (a === b || b === c || c === a) {
+  return (a + b + c) * (a ** 2 + b ** 2 + c ** 2)
+} else if (a === b && b === c) {
+  return (a + b + c) * (a ** 2 + b ** 2 + c ** 2) * (a ** 3 + b ** 3 + c ** 3)
+} */
+
+// flag에 따라 다른 값 반환하기
+/* return flag?a+b:a-b */
+
 // 공배수
 /* return number % n === 0 && number % m === 0 ? 1 : 0
-
 // 남의 풀이1
 return +!(number % n || number % m); // 이거 뭘까??
-
 // 남의 풀이2
 return (number%n ===0) ? (number%m===0) ? 1 : 0 : 0;
-
 */
 
 // n의 배수
@@ -79,32 +98,3 @@ function solution(str1, str2) {
 let str = input[0]
 let n = Number(input[1])
 console.log(str.repeat(n)) */
-
-// [미] 소문자 바꿔서 출력하기
-/* let input = "aBcDeFg"
-
-for (let i = 0; i < input.length; i++) {
-  if (input[i] !== input[i].toLowerCase()) {
-    input[i] === input[i].toLowerCase()
-  } else if (input[i] === input.toLowerCase()) {
-    input[i] === input.toUpperCase()
-  }
-}
-console.log(input) */
-
-/* // [미] 문자열 겹쳐쓰기
-const my_string = "He11oWor1d"
-const overwrite_string = "lloWorl"
-const s = 2
-
-// 인덱스 s부터 overwrite 길이만큼을 바꾸고 뒷부분 남으면 그대로 남길 것
-
-function solution(my_string, overwrite_string, s) {
-  const front = my_string.substr(0, s) // s까지 자른 my_string
-  const back = my_string.substr(s, overwrite_string.length)
-  console.log(front)
-  console.log(back)
-}
-
-solution(my_string, overwrite_string, s)
- */
