@@ -1,3 +1,51 @@
+// [미]문자열 겹쳐쓰기
+const mystr = "He11oWor1d"
+const ovstr = "lloWorl"
+const s = 2
+
+const front = mystr.substring(0, s)
+if (mystr.length > ovstr.length) {
+  const backLength = mystr.length - ovstr.length - s
+  // 전체 길이 - 앞에 넣은 숫자 = 뒤에서부터 n글자
+  const back = mystr.slice(-backLength, mystr.length)
+  let answer = front + ovstr + back
+  console.log(answer)
+}
+
+// 대소문자 바꿔서 출력하기
+/* let str = "aBcDeFg"
+let answer = []
+for (let i = 0; i < str.length; i++) {
+  if (str[i] === str[i].toLowerCase()) {
+    answer.push(str[i].toUpperCase())
+  } else if (str[i] === str[i].toUpperCase()) {
+    answer.push(str[i].toLowerCase())
+  }
+}
+console.log(answer.toString().split(",").join(""))
+
+// 남의 풀이1
+str = input[0].split("")
+str.forEach((value, index) => {
+  if (value === value.toUpperCase()) {
+    str[index] = value.toLowerCase()
+  } else {
+    str[index] = value.toUpperCase()
+  }
+})
+console.log(str.join(""))
+
+// 남의 풀이2
+ss = ""
+for (let i of str) {
+  if (i == i.toUpperCase()) {
+    ss += i.toLowerCase()
+  } else {
+    ss += i.toUpperCase()
+  }
+}
+console.log(ss) */
+
 // [미] 원소들의 곱과 합
 /* let arr = [3, 4, 5, 2, 1]
 let arr2 = [5, 7, 8, 3]
