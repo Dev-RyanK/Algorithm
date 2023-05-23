@@ -1,5 +1,5 @@
 // [미]문자열 겹쳐쓰기
-const mystr = "He11oWor1d"
+/* const mystr = "He11oWor1d"
 const ovstr = "lloWorl"
 const s = 2
 
@@ -10,7 +10,32 @@ if (mystr.length > ovstr.length) {
   const back = mystr.slice(-backLength, mystr.length)
   let answer = front + ovstr + back
   console.log(answer)
-}
+} */
+
+// [미] 홀짝에 따라 다른 값 반환하기
+/* function solution(n) {
+  let arr = []
+  if (n % 2 === 0) {
+    for (let i = 1; i < n; i++) {
+      while (2 * i <= n) {
+        arr.push(2 * i)
+        i + 1
+        break
+      }
+      const arr2 = arr.map((x) => x ** 2)
+      return arr2.reduce((p, c) => p + c, 0)
+    }
+  } else {
+    for (let i = 1; i <= n; i++) {
+      while (2 * i - 1 <= n) {
+        arr.push(2 * i - 1)
+        i + 1
+        break
+      }
+      return arr.reduce((p, c) => p + c, 0)
+    }
+  }
+} */
 
 // 대소문자 바꿔서 출력하기
 /* let str = "aBcDeFg"
