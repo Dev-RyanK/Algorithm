@@ -1,3 +1,25 @@
+// 원소들의 곱과 합
+/* function solution(num_list) {
+  let multiple = 0
+  let square = 0
+  for (let i = 0; i < num_list.length; i++) {
+    multiple = num_list.reduce((p, c) => p * c, 1)
+    square = num_list.reduce((p, c) => p + c, 0) ** 2
+  }
+  return multiple < square ? 1 : 0
+}
+
+// 남의 풀이
+function solution(num_list) {
+    let accMul = 1
+    let accSum = 0
+    for (const num of num_list) {
+        accMul *= num
+        accSum += num
+    }
+    return accMul < accSum ** 2 ? 1 : 0
+} */
+
 // 등차수열의 특정한 항만 더하기
 /* function solution(a, d, included) {
   let arr = []
