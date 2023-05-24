@@ -1,3 +1,26 @@
+/* // 이어 붙인 수
+function solution(num_list) {
+  let oddNum = ""
+  let evenNum = ""
+  const aa = num_list.map((x) => x.toString())
+  for (const num of aa) {
+    Number(num) % 2 ? (oddNum += num) : (evenNum += num)
+  }
+  return parseInt(oddNum) + parseInt(evenNum)
+}
+
+solution([3, 4, 5, 2, 1])
+solution([5, 7, 8, 3])
+
+// 남의 풀이 (멋지긴 하나 가독성은 떨어지는)
+const odd = [...(num_list + "")]
+  .map((x) => (Number(x) % 2 === 1 ? x : ""))
+  .join("")
+const even = [...(num_list + "")]
+  .map((x) => (Number(x) % 2 === 0 ? x : ""))
+  .join("")
+return Number(odd) + Number(even) */
+
 // 원소들의 곱과 합
 /* function solution(num_list) {
   let multiple = 0
