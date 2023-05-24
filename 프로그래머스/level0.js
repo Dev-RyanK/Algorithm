@@ -1,3 +1,24 @@
+// 등차수열의 특정한 항만 더하기
+/* function solution(a, d, included) {
+  let arr = []
+  for (let i = 0; i < included.length; i++) {
+    if (included[i]) {
+      arr.push(a + d * i)
+    }
+  }
+  return arr.reduce((p, c) => p + c, 0)
+}
+
+// 남의 풀이
+var answer = 0;
+    // an = a + d(n - 1);
+    for(let i = 0; i < included.length; i++) {
+        if(included[i]) {
+            answer += (a + (d * i))
+        }
+    }
+    return answer; */
+
 // [미]문자열 겹쳐쓰기
 /* const mystr = "He11oWor1d"
 const ovstr = "lloWorl"
