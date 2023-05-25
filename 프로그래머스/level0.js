@@ -1,3 +1,38 @@
+// 수 조작하기2
+/* function solution(numLog) {
+  let answer = ""
+  for (let i = 0; i < numLog.length; i++) {
+    let cal = numLog[i - 1] - numLog[i]
+    if (cal === 1) {
+      answer += "s"
+    } else if (cal === -1) {
+      answer += "w"
+    } else if (cal === -10) {
+      answer += "d"
+    } else if (cal === 10) {
+      answer += "a"
+    } else if (cal === undefined) {
+      answer += ""
+    }
+  }
+  return answer
+}
+
+// 남의 풀이
+const convert = {
+  1: "w",
+  "-1": "s",
+  10: "d",
+  "-10": "a",
+}
+
+return numLog
+  .slice(1)
+  .map((v, i) => {
+    return convert[v - numLog[i]]
+  })
+  .join("") */
+
 // 수 조작하기1
 /* function solution(n, control) {
   for (i of control) {
