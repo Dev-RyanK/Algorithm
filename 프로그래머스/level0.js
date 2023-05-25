@@ -1,3 +1,50 @@
+// 수 조작하기1
+/* function solution(n, control) {
+  for (i of control) {
+    if (i === "w") {
+      n += 1
+    } else if (i === "s") {
+      n -= 1
+    } else if (i === "d") {
+      n += 10
+    } else if (i === "a") {
+      n -= 10
+    }
+  }
+  return n
+}
+
+// 남의 풀이
+const operations = {
+  w: (n) => n + 1,
+  s: (n) => n - 1,
+  d: (n) => n + 10,
+  a: (n) => n - 10,
+}
+
+function solution(n, control) {
+  return [...control].reduce((prev, op) => operations[op](prev), n)
+}
+
+// 남의 풀이2
+for (let i = 0; i < control.length; i++) {
+  switch (control[i]) {
+    case "w":
+      n++
+      break
+    case "s":
+      n--
+      break
+    case "d":
+      n += 10
+      break
+    case "a":
+      n -= 10
+      break
+  }
+}
+return n */
+
 // 마지막 두 원소
 /* function solution(num_list) {
   let finalNum = num_list[num_list.length - 1]
