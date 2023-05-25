@@ -1,5 +1,21 @@
-/* // 이어 붙인 수
-function solution(num_list) {
+// 마지막 두 원소
+/* function solution(num_list) {
+  let finalNum = num_list[num_list.length - 1]
+  let secondNum = num_list[num_list.length - 2]
+  if (finalNum > secondNum) {
+    num_list.push(finalNum - secondNum)
+  } else {
+    num_list.push(finalNum * 2)
+  }
+  return num_list
+}
+
+// 남의 풀이
+const [a, b] = [...num_list].reverse()
+return [...num_list, a > b ? a - b : a * 2] */
+
+// 이어 붙인 수
+/* function solution(num_list) {
   let oddNum = ""
   let evenNum = ""
   const aa = num_list.map((x) => x.toString())
