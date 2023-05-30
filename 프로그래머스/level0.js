@@ -1,3 +1,14 @@
+// 카운트 업
+/* function solution(start, end) {
+  let arr = []
+  for (let i = start; i <= end; i++) {
+    arr.push(i)
+  }
+  return arr
+}
+
+solution(3, 10) */
+
 // 수 조작하기2
 /* function solution(numLog) {
   let answer = ""
