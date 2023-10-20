@@ -1,3 +1,20 @@
+// 콜라츠 수열 만들기
+function solution(n) {
+  let arr = []
+  while (n !== 1) {
+    if (n % 2 === 0) {
+      // n = n / 2
+      arr.push(n)
+    } else {
+      // n = 3 * n + 1
+      arr.push(n / 2)
+    }
+  }
+  console.log(arr)
+}
+
+solution(10)
+
 // 카운트 업
 /* function solution(start, end) {
   let arr = []
@@ -173,18 +190,28 @@ var answer = 0;
     }
     return answer; */
 
-// [미]문자열 겹쳐쓰기
-/* const mystr = "He11oWor1d"
-const ovstr = "lloWorl"
-const s = 2
+// 문자열 겹쳐쓰기
+/* 
+const str1 = "He11oWor1d"
+const ovr1 = "lloWorl"
+const s1 = 2
 
-const front = mystr.substring(0, s)
-if (mystr.length > ovstr.length) {
-  const backLength = mystr.length - ovstr.length - s
-  // 전체 길이 - 앞에 넣은 숫자 = 뒤에서부터 n글자
-  const back = mystr.slice(-backLength, mystr.length)
-  let answer = front + ovstr + back
-  console.log(answer)
+// front = He 2
+// middle = ovr1 7 (s)
+// back =
+const str2 = "Program29b8UYP"
+const ovr2 = "merS123"
+const s2 = 7
+
+const sol = (mystr, ovstr, s) => {
+  const front = mystr.substring(0, s)
+  const back = mystr.substring(s + ovstr.length)
+  console.log(front + ovstr + back)
+}
+
+sol(str1, ovr1, s1)
+sol(str2, ovr2, s2)
+
 } */
 
 // [미] 홀짝에 따라 다른 값 반환하기
