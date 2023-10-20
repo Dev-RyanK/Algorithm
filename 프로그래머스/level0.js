@@ -373,3 +373,27 @@ function solution(str1, str2) {
 let str = input[0]
 let n = Number(input[1])
 console.log(str.repeat(n)) */
+
+// 조건 문자열
+/* 
+const ineq1 = "<"
+const ineq2 = ">"
+const eq1 = "="
+const eq2 = "!"
+const n1 = 20
+const m1 = 50
+const n2 = 41
+const m2 = 78
+
+function solution(ineq, eq, n, m) {
+  if (ineq === "<" && eq === "=") {
+    return Number(n <= m)
+  } else if (ineq === ">" && eq === "=") {
+    return Number(n >= m)
+  } else if (ineq === ">" && eq === "!") {
+    return Number(n > m)
+  } else if (ineq === "<" && eq === "!") {
+    return Number(n < m)
+  }
+}
+*/
