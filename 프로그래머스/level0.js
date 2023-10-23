@@ -410,3 +410,28 @@ function solution(ineq, eq, n, m) {
   }
 }
 */
+
+// 글자 이어 붙여 문자열 만들기
+
+/* const str1 = "cvsgiorszzzmrpaqpe"
+const idx1 = [16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7]
+
+const str2 = "zpiaz"
+const idx2 = [1, 2, 0, 0, 3]
+
+function solution(mystr, idxlist) {
+  const strArr = new Array(...mystr.split(""))
+  let newArr = new Array()
+  for (let i = 0; i < idxlist.length; i++) {
+    newArr.push(mystr[idxlist[i]])
+  }
+  return newArr.join("")
+}
+
+solution(str1, idx1)
+solution(str2, idx2)
+
+- 남의 풀이
+function solution(my_string, index_list) {
+    return index_list.map(i => my_string[i]).join('')
+} */
