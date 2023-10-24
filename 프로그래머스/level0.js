@@ -435,3 +435,16 @@ solution(str2, idx2)
 function solution(my_string, index_list) {
     return index_list.map(i => my_string[i]).join('')
 } */
+
+// 9로 나눈 나머지
+
+/* const n1 = "123"
+const n2 = "78720646226947352489"
+
+function solution(n) {
+  const sum = n.split("").reduce((a, c) => Number(a) + Number(c), 0)
+  return sum % 9
+}
+
+console.log(solution(n1))
+console.log(solution(n2)) */
