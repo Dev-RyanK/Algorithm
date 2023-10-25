@@ -2,40 +2,19 @@
 const input = require("fs")
   .readFileSync(__dirname + "\\ex.txt")
   .toString()
-  .trim();
+  .trim()
 
-/* const alpha = [];
-const arr = [];
-const location = [];
+// 알파벳 전체로 이루어진 배열을 만든다
+const alphaArr = Array.from({ length: 26 }, (v, i) =>
+  String.fromCharCode(i + 65).toLowerCase()
+)
 
+const result = []
 
-for (j of input) {
-  arr.push(j);
+// 알파벳 전체 길이만큼 반복
+// input의 인덱스를 가지면 push 한다
+for (i = 0; i < alphaArr.length; i++) {
+  result.push(input.indexOf(alphaArr[i]))
 }
 
-for (let k = 0; k < alpha.length; k++) {
-  // if (alpha[k] === arr[k]) {
-  // arr의 값[k]가 alpha에 포함이 되어 있으면 alpha의 k를 반환
-  if (alpha[k] === arr[k]) {
-    location.push(k);
-  } else location.push(-1);
-}
-
-console.log(location);
- */
-
-const alpha = [];
-for (let i = 97; i < 123; i++) {
-  alpha.push(String.fromCharCode(i));
-}
-
-const str = alpha.join("");
-const arr = [];
-for (el of input) {
-  for (let j = 0; j < 26; j++) {
-    if (str.includes(el)) {
-      arr.push(j);
-    }
-  }
-}
-console.log(arr);
+console.log(result.join(" "))
